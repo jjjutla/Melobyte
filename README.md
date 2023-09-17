@@ -55,7 +55,7 @@ soroban contract deploy --wasm ./target/melobyte-init.wasm \
 ### 6. Invoke the initialize function with the contractID:
 
 ```
-soroban contract invoke --id $CONTRACT_ID --source admin \
+soroban contract invoke --id [CONTRACT_ID] --source admin \
     --network standalone \
     -- initialize \
 	--admin admin \
@@ -74,7 +74,7 @@ soroban contract bindings typescript \
     --wasm ./target/melobyte-prod.wasm \
 	--network standalone \
 	--contract-id [CONTRACT_ID] \
-	--contract-name Million \
+	--contract-name Melobyte \
 	--output-dir node_modules/Melobyte
 ```
 ### 10. Export Web3Storage token and run:
