@@ -130,7 +130,7 @@ export REACT_APP_WEB3_STORAGE=[TOKEN]
 <img width="1440" alt="Screenshot 2023-09-17 at 16 00 45" src="https://github.com/jjjutla/Melobyte/assets/22000925/da8a4a46-e648-431f-899a-47ee7db050e4">
 
 ## Whats next for Melobyte?
-The journey of Melobyte is just starting. My primary focus would be to improve the UI and continue testing and auditing the contracts. Then the platform will be suitable to deploy live and onboard artists and fans. New token standard?
+The journey of Melobyte is just starting. My primary focus would be to improve the UI and continue testing and auditing the contracts. Then the platform will be suitable to deploy live and onboard artists and fans. New token standard for music?/ ERC-3643N
 
 ## Limitations
 Being a solo fullstack developer with a limited timeframe to complete this project there were several limitations and restrictions I had to put on the scope of this project. The most noticeable probelem was the latest version of freighter caused trouble with reading the XDR. Furthermore...
