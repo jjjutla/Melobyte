@@ -3,7 +3,6 @@ name = "erc721"
 version = "0.1.0"
 edition = "2021"
 resolver = "2"
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
 name = "erc721"
@@ -15,7 +14,6 @@ storage = { workspace = true }
 
 [dev-dependencies]
 soroban-sdk = { workspace = true, features = ["testutils"] }
-
 
 [features]
 default = ["enumerable", "metadata", "burnable"]
