@@ -1,6 +1,6 @@
 #![no_std]
 
-// Publicaly expose the ERC721 traits
+// PPublicly expose the ERC721 traits
 pub use crate::erc721traits::burnable::ERC721Burnable;
 pub use crate::erc721traits::enumerable::ERC721Enumerable;
 pub use crate::erc721traits::erc721::ERC721;
@@ -74,7 +74,7 @@ impl ERC721 for ERC721Contract {
         if let Some(addr) = DataKey::TokenOwner(token_id).get::<Address>(&env) {
             if addr == from {
                 if cfg!(feature = "enumerable") && from != to {
-                    // update enumerable datai
+                    // Update enumerable datai
                     let from_index_key = DataKeyEnumerable::OwnerIndexToken(from.clone());
                     let from_token_key = DataKeyEnumerable::OwnerTokenIndex(from.clone());
                     let to_index_key = DataKeyEnumerable::OwnerIndexToken(to.clone());
