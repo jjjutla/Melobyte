@@ -25,7 +25,7 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 - Exposes the smart contract functions letting you mint, buy and transfer the tokens.
 
 ## - Security
-- a storage crate that allows more convenient api for the soroban storage access
+- A [storage crate](https://github.com/jjjutla/Melobyte/blob/main/storage/src/lib.rs) that allows more convenient api for the soroban storage access
 - Secure storage using [Web3Storage](https://github.com/jjjutla/Melobyte/blob/0497f4a307156ec94b91a2f8afb9f894df4b9a81/melobyte-creator/App.tsx#L376) and the CryptoJS library to encrypt files
 
 ## - [Typescript]: Components and Hooks
