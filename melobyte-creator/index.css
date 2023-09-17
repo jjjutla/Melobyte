@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(134deg, #69337B 0%, #181E41 63.29%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.white-border {
+  border-color: white !important;
+}
+
+.white-outline .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline .MuiInputBase-input::placeholder {
+  color: white !important;
+  opacity: 1;
+
+}
+
+.white-outline .MuiInputBase-input:-ms-input-placeholder {
+  color: white !important;
+}
+
+.white-outline .MuiInputBase-input::-ms-input-placeholder {
+  color: white !important;
+}
+
+.white-outline .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline:hover .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline .Mui-disabled .MuiOutlinedInput-notchedOutline {
+  border-color: white !important;
+}
+
+.white-outline .MuiOutlinedInput-input::placeholder {
+  color: white !important;
+}
+
+.white-outline .Mui-disabled .MuiOutlinedInput-input::placeholder {
+  color: white !important;
+}

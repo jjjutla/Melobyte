@@ -1,0 +1,90 @@
+<div id="freighter-wrap" aria-live="polite">
+  <button id="mint" aria-controls="freighter-wrap">Mint</button>
+  <span class="mint-info">each NFT upload is fixed at 256 XLM</span> <!-- Added this line -->
+</div>
+<div id="errormint"></div>
+
+
+<style>
+div {
+    line-height: 2.7rem;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    white-space: nowrap;
+    display: flex; 
+    justify-content: center; 
+    gap: 10px;
+}
+
+button {
+    padding: 6px 20px;
+    align-items: center;
+    gap: 6px;
+    border-radius: 30px;
+    background: linear-gradient(100deg, #06DBAC 5.23%, #BD00FF 92.7%);
+    border: none;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+}
+
+.mint-info { 
+    font-style: italic; 
+    align-self: center; 
+    color: grey;            /* Making the text grey */
+    font-size: 1rem;        /* Default size of the text. Change '1rem' to any other value to adjust the size */
+}
+
+
+
+</style>
+
+<script>
+  import * as client from 'melobyte';
+  import * as wallet from '@stellar/freighter-api';
+  import {xdr} from 'soroban-client';
+  
+  const button = document.querySelector("#mint");
+  
+  button.addEventListener('click', async () => {
+    if (!(await wallet.isAllowed())) {
+      await wallet.setAllowed();
+    }
+    try {
+      const { publicKey } = await wallet.getUserInfo();
+      console.log(publicKey)
+      console.log(client.CONTRACT_ID)
+      let retry = 3;
+      while (retry > 0) {
+        retry--;
+        let x = Math.floor(Math.random() * 128);
+        let y = Math.floor(Math.random() * 32);
+        let result = await client.mint({to: publicKey, x: x, y: y}, {fee: 500000, responseType: "full", wallet: wallet});
+        console.log(result)
+        if (result.status == "SUCCESS") {
+          let rvalue = xdr.TransactionMeta.fromXDR(result.resultMetaXdr, 'base64').v3().sorobanMeta().returnValue().u32();
+          let result2 = await client.tokenUri({token_id: rvalue}, {responseType: "simulated", fee: 100000, wallet: wallet});
+          if (result2.results[0].xdr) {
+            let xdrUri = result2.results[0].xdr;
+            let uri = xdr.ScVal.fromXDR(xdrUri, 'base64').str().toString()
+            let jsonResponse = await fetch(uri);
+            let jsonData = await jsonResponse.json();
+
+            console.log(uri)
+            window.location = jsonData.home_page;
+          }
+        }
+        console.log("Error", result);
+      }
+      if (retry == 0) {
+        document.querySelector("#errormint").innerHTML = e;
+      }
+    } catch (e) {
+      console.log(e)
+      document.querySelector("#errormint").innerHTML = e;
+    }
+  });
+</script>

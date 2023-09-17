@@ -1,0 +1,369 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Mint from '../components/Mint.astro';
+import NFT from '../components/NFT.astro';
+import Transfer from '../components/Transfer.astro';
+import * as melobyte from 'melobyte';
+
+console.log(melobyte.CONTRACT_ID)
+const FakeWallet = {
+  isConnected: function()  { return false },
+}
+let total = await melobyte.totalSupply({wallet: FakeWallet});
+
+const table = [];
+for (let i = 0; i < total; i++) {
+  try {
+  let turi = await melobyte.tokenUri({token_id: i}, {wallet: FakeWallet});
+  let ru = await fetch(turi);
+  let data = await ru.json();
+
+    table.push({
+      id: "0x" + i.toString(16).padStart(3, '0'),
+      uri: data.home_page,
+      owner: await melobyte.ownerOf({token_id: i}, {wallet: FakeWallet}),
+      image: data.image,
+      coords: data.coords,
+
+    })
+  } catch {}
+}
+
+---
+
+<Layout title="melobyte">
+    <main>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet">
+<div class="page" id="page-2">
+  <div class="navbar">
+    <div class="navbar-brand">
+        <img src="/melobyte_white.png" alt="Melobyte Logo" class="navbar-logo">
+        <span class="navbar-brand-text">Melobyte</span>
+    </div>
+    <div class="navbar-links">
+        <a href="#">Home</a>
+        <a href="#">Creator Upload</a>
+        <a href="#">Github</a>
+        <a href="#">Soroban</a>
+    </div>
+</div>
+  <div class="content">
+    <div class="text-section"> 
+      <p id="title">Decentralising Music Assets</p>
+      <p class="subtitle">Melobyte empowers artists by decentralizing music assets using the Stellar-powered Soroban smart contract platform, transforming songs into royalty-bearing tokens for transparent rewards and fan investments.</p>
+      <div class="powered-by-section"> 
+        <p class="powered-by">Powered by</p>
+        <img src="/soroban.png" alt="Soroban Logo" class="soroban-logo">
+      </div>
+    </div>
+    <img src="/hand.png" alt="Hand Image" id="hand-image">
+  </div>
+</div>
+<div class="page" id="page-4">
+  <div class="page-4-left"> 
+    <img src="/nfts.jpeg" alt="NFTs Image" class="nfts-image">
+  </div>
+  <div class="page-4-right">
+    <p id="title">NFT Marketplace</p>
+    <p class="subtitle">Melobyte is redefining the music industry in the Web 3.0 era by leveraging the Stellar-powered Soroban platform to protect, invest, and monetize musical intellectual property. Harnessing Soroban's secure, scalable, and integrated blockchain environment, Melobyte allows artists to upload their music, ensuring the preservation of their rights down to individual beats and bars. Fans, on the other hand, can invest in these unique, fractionalized music assets, deepening their connection to their favorite tracks. As music consumption evolves, Melobyte's pioneering approach addresses the challenges of traditional music distribution, offering unparalleled transparency in compensation and tracking, making it an ideal fit for Soroban's efficient and trustless ecosystem.</p>
+    <div class="mint-container">
+      <Mint class="mint-button" />
+  </div>
+</div>
+</div>
+<div class="page" id="page-3">
+  <div class="content">
+      <NFT />
+      <div class="transfer-container">
+        <Transfer />
+    </div>
+  </div>
+</div>
+</Layout>
+
+
+<script>
+</script>
+<style>
+
+.transfer-container {
+    position: relative; 
+    top: 120px;          
+    left: -100px;        
+}
+
+.page {
+    min-height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    display: block;
+    clear: both;
+    width: 100%;
+}
+
+#page-1 {
+    background-color: #cde;
+}
+
+#page-2 {
+    background-image: url('/bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#page-3 {
+    background-color: #0a0a0a;
+}
+
+#page-4 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #0a0a0a;
+}
+
+table {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    margin-bottom: 2em;
+}
+td, th {
+  text-align: center;
+  //border: 1px solid black;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+main {
+    color: black;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-left: auto;
+    margin-right: auto;
+}
+  .title {
+    background-color: black;
+    color: white;
+    padding: 1em;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25) inset, 0 5px 10px 5px rgba(0, 0, 0, 0.25);
+    position: relative;
+    top: 1.5em;
+    width: fit-content;
+    margin: auto;
+    font-size: 1rem;
+  }
+ 
+  h1 {
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+}
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+#title {
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    text-align: left;      
+    flex: 1;   
+    margin-top: 0;              
+}
+
+#hand-image {
+    flex: 1;
+    max-width: 50%; 
+    object-fit: cover;
+}
+
+
+.subtitle {
+    color: #FFF;
+    font-family: 'Inter';
+    font-size: 14px;
+    text-align: left; 
+    max-width: 80%;
+    margin-top: -60px;
+}
+
+
+.text-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
+    width: 50%;
+    padding-left: 2%; 
+}
+
+.powered-by-section {
+  display: flex;
+  align-items: center;  
+  margin-top: -4px;      
+}
+
+.powered-by {
+  margin-right: 0.5rem;   
+  font-size: 1.3rem;     
+  color: #FFF;           
+}
+
+.soroban-logo {
+  width: 100px;          
+  height: auto;        
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(25px);
+    padding: 15px 0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+.navbar a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #FFF;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #aaa;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    margin-right: auto; 
+    margin-left: 10px;
+}
+
+.navbar-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+#marketplace-title {
+    margin-top: -300px;
+    margin-left: -480px;
+}
+
+
+.navbar-brand-text {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; 
+    flex: 1; 
+    justify-content: center; 
+    position: absolute;
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+
+.page-4-left, .page-4-right {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: none;
+}
+
+.nfts-image {
+    max-width: 90%;
+    height: auto;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.page-4-right {
+    display: flex;
+    align-items: flex-start;  
+    justify-content: flex-start; 
+    padding: 20px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    flex-direction: column; 
+}
+
+
+.mint-button {
+    margin-top: 50px;
+    margin-left: -20px; 
+}
+
+.nft-market-title {
+    color: #FFF;
+    font-size: 24px;
+    text-align: left;    
+    margin-bottom: 16px;
+    padding-left: 20px;   
+}
+
+.nft-market-subtitle {
+    color: #BBB;
+    font-size: 16px;
+    text-align: left;    
+    margin-bottom: 24px;
+    max-width: 90%;
+    line-height: 1.4;
+    padding-left: 20px;   
+}
+
+.nft-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    justify-content: center; 
+}
+
+.nft-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 10px;
+    border: 1px solid black;
+    margin: 10px;
+    max-width: 150px; 
+}
+
+
+
+
+
+</style>
