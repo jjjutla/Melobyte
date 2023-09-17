@@ -13,12 +13,12 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 
 # Workflow
 ## - [Rust] Smart Contracts:
-- An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban. https://docs.openzeppelin.com/contracts/2.x/api/token/erc721
-- A contract that uses the converted ERC721 implementation.
+- An implementation of [ERC721](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) token demonstrating how to convert and ethereum standard to Soroban. 
+- A [contract](https://github.com/jjjutla/Melobyte/blob/main/erc721/src/lib.rs) that uses the converted ERC721 implementation.
 - A [marketplace](https://github.com/jjjutla/Melobyte/blob/main/mlh-marketplace/src/lib.rs) contract that performs trust-less validation and execution of NFT trades.
 
 ## - [Bash] Deployment and Initialization Scripts:
-- A collection of Bash scripts that fascilitate th deployment and initialization of the smart contract and deployments if the local standalone network
+- A collection of Bash [scripts](https://github.com/jjjutla/Melobyte/tree/main/melobyte-contract) that fascilitate the deployment and initialization of the smart contract and deployments if the local standalone network
 
 ## - [Astro] Font end implementation:
 - Developed using Astro, mainly as it was a new learning experiance working with this framework and is more flexible, which allowed me to build UI with any popular component library.
@@ -26,7 +26,7 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 
 ## - Security
 - a storage crate that allows more convenient api for the soroban storage access
-- Secure storage using Web3Storage and the CryptoJS library to encrypt files
+- Secure storage using [Web3Storage](https://github.com/jjjutla/Melobyte/blob/0497f4a307156ec94b91a2f8afb9f894df4b9a81/melobyte-creator/App.tsx#L376) and the CryptoJS library to encrypt files
 
 ## - [Typescript]: Components and Hooks
 - These are the functions and components that make the functionality of the UI work:
