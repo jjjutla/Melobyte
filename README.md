@@ -13,7 +13,7 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 
 # Workflow
 ## - [Rust] Smart Contracts:
-- An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban.
+- An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban. https://docs.openzeppelin.com/contracts/2.x/api/token/erc721
 - A contract that uses the converted ERC721 implementation.
 - A marketplace contract that performs trust-less validation and execution of NFT trades.
 
