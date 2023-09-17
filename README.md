@@ -54,14 +54,14 @@ soroban contract deploy --wasm ./target/melobyte-init.wasm \
 ```
 ### 6. Invoke the initialize function with the contractID:
 
-``
+```
 soroban contract invoke --id $CONTRACT_ID --source admin \
     --network standalone \
     -- initialize \
 	--admin admin \
 	--asset $(soroban lab token id --asset native --network standalone) \
 	--price 2560000000
- ``
+ ```
 
 ### 7. Install the contract
 
