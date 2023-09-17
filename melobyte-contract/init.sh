@@ -3,14 +3,11 @@ curl "http://localhost:8000/friendbot?addr=$(soroban config identity address adm
 soroban lab token wrap --asset native --network standalone --source admin &
 echo building contract
 RUSTFLAGS="-C target-cpu=mvp" cargo +nightly build --target wasm32-unknown-unknown --release -Z build-std=std,panic_abort -Z build-std-features=panic_immediate_abort
-
 echo deploying contract
 CONTRACT_ID=$(soroban contract deploy --wasm ../target/wasm32-unknown-unknown/release/melobyte_contract.wasm --source admin --network standalone)
-
 echo $CONTRACT_ID >contract.id
 echo initializing contract $CONTRACT_ID
 soroban contract invoke --id $CONTRACT_ID --source admin --network standalone -- initialize --admin $(soroban config identity address admin) --asset $(soroban lab token id --asset native --network standalone) --price 2560000000
-
 mint() {
 	USERNFT=nft$1
 	soroban config identity generate $USERNFT
