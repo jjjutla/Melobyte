@@ -1,52 +1,54 @@
 # Melobyte
 ## Decentralising Music Assets using Soroban
 
-Melobyte is a decentralized platform on the Stellar blockchain powered by Soroban that focuses on safeguarding and monetizing music intellectual property. By allowing artists to upload and mint parts of their songs as royalty-bearing tokens, it ensures their creations are protected while offering fans a unique opportunity to invest directly in these musical assets. The integration with Soroban ensures fast, secure, and transparent transactions, providing an efficient solution to the challenges traditionally faced by music creators in an evolving digital landscape.
+Melobyte is a decentralised platform built on the Stellar blockchain powered by Soroban that focuses on protecting and decentralising music intellectual property. By allowing artists to upload and mint parts of their songs as royalty-bearing tokens, it ensures their creations are protected while offering fans a unique opportunity to invest directly in these musical assets. The integration with Soroban ensures fast, secure, and transparent transactions, providing an efficient solution to the challenges traditionally faced by music creators in an evolving digital landscape.
 
 <img width="1440" alt="Screenshot 2023-09-17 at 15 58 40" src="https://github.com/jjjutla/Melobyte/assets/22000925/fec1f663-78f3-4093-82a2-bcca0af8aa54">
 
 ## Project Goal
 
-Melobyte was inspired by the story of drummer Gregory Coleman, whose famous 4-bar solo was widely sampled but never paid for, leading him to die homeless. Today, many artists face issues like underpayment from streaming platforms, intellectual theft, incorrect song credits, and unclear royalties. Some unique details in songs, such as a single beat, are left unprotected. Fans also desire a deeper connection to their music.
+Melobyte was inspired by drummer [Gregory Coleman](https://en.wikipedia.org/wiki/Gregory_C._Coleman), whose iconic 4-bar solo was sampled thousands of times in songs that made over millions of dollars, however he was left without compensation, resulting in him tragically dying homeless on the streets of Atlanta. 
 
-Melobyte aims to solve these problems by using blockchain technology. This ensures artists have clear proof of their work, standardizes song information, and introduces a token system, allowing fans and artists to interact while ensuring fair compensation.
+Many artists today struggle with issues such as inadequate pay from streaming platforms, intellectual property theft, misattributed song credits, and ambiguous royalty structures. Even the most atomic parts of the song, like an individual beat, often lack protection. 
 
-https://arxiv.org/abs/1911.08278
+Melobyte addresses these concerns using blockchain technology. It provides artists with a platform to protect their intellectual property all the way down to the individual beats and bars and through the decentralised token system allow artists to earn royalties on their songs ensuring that they are fairly compensated, and for fans to invest in these new assets.
 
+The following research paper also played as an inspiration: https://arxiv.org/abs/1911.08278 
 # Workflow
 
-Once the creator selects to mint their track a freighter popup appears asking the user to approve the transaction, which will invoke the host function to mint and ask to transfer 256 XLM from their account. Once the transaction has been approved and signed using freighter wallet the artist is redirected to the creator uploader page. Here they input the metadata of the track, upload the full track and the album cover. They will also have the option to encrypt the upload to IPFS.
+Once the artist selects to mint their track a freighter popup appears asking the user to approve the transaction, which will invoke the host function to mint and ask to transfer 256 XLM from their account. Once the transaction has been approved and signed using the freighter wallet extension the artist is redirected to the creator uploader page. Here they input the metadata of the track, upload the full track and the album cover. They will also have the option to encrypt the upload to IPFS.
 
-The track waveform will then be loaded and the creator annotates the track to identify sections such as Intro, Verse, Chorus etc so specific parts of the composition can be identified within the dataset. They can also view the audio fingerprint. The artist then uploads the multi-channel audio files of their song as a proof of creation to instantiate the creation medatata to a base layer that refers to the encrypted upload of the multip channel audio files on IPFS. The self-referencing binary tree is split into the stems so at the atomic level a single beat, syllable, note ot bass is a piece of intellectual property worth of protection.
+The track waveform will then be loaded and the artist annotates the track to identify sections such as Intro, Verse, Chorus etc so specific parts of the composition can be identified within the dataset. They can also view the audio fingerprint. The artist then uploads the multi-channel audio files of their song as a proof of creation to instantiate the creation medatata to a base layer that refers to the encrypted upload of the multiple channel audio files on IPFS. The self-referencing binary tree is split into the stems so at the atomic level a single beat, syllable, note or bass is a piece of intellectual property worth of protection.
 
-Once the metadata is instantiated to the base later and the multichannel audio files are uploaded to IPFS fans and other artists can access these assets in the marketplace. An ERC721 marketplace contract is deployed to performs trust-less validation and execution of NFT trades and these tokens can be sold.
+Once the metadata is instantiated to the base later and the multichannel audio files are uploaded to IPFS fans and other artists can access these assets in the marketplace. An ERC721 marketplace contract is deployed to perform trust-less validation and execution of NFT trades and these tokens can be sold.
 
 
-## - [Rust] Smart Contracts:
-- An implementation of [ERC721](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) token demonstrating how to convert and ethereum standard to Soroban. 
+### [Rust] Smart Contracts:
+- An implementation of [ERC721](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) token demonstrating how to convert an Ethereum standard to Soroban. 
 - A [contract](https://github.com/jjjutla/Melobyte/blob/main/erc721/src/lib.rs) that uses the converted ERC721 implementation.
 - A [marketplace](https://github.com/jjjutla/Melobyte/blob/main/mlh-marketplace/src/lib.rs) contract that performs trust-less validation and execution of NFT trades.
 
-## - [Bash] Deployment and Initialization Scripts:
-- A collection of Bash [scripts](https://github.com/jjjutla/Melobyte/tree/main/melobyte-contract) that fascilitate the deployment and initialization of the smart contract and deployments if the local standalone network
+### [Bash] Deployment and Initialisation Scripts:
+- A collection of Bash [scripts](https://github.com/jjjutla/Melobyte/tree/main/melobyte-contract) that facilitate the deployment and initialisation of the smart contract and deployments of the local standalone network.
 
-## - [Astro] Font end implementation:
-- Developed using Astro, mainly as it was a new learning experiance working with this framework and is more flexible, which allowed me to build UI with any popular component library.
+### [Astro] Font end implementation:
+- Developed using Astro, mainly as it was a new learning experience working with this framework and is more flexible, which allowed me to build UI with any popular component library.
 - Exposes the smart contract functions letting you mint, buy and transfer the tokens.
 
-## - Security
-- A [storage crate](https://github.com/jjjutla/Melobyte/blob/main/storage/src/lib.rs) that allows more convenient api for the soroban storage access
-- Secure storage using [Web3Storage](https://github.com/jjjutla/Melobyte/blob/0497f4a307156ec94b91a2f8afb9f894df4b9a81/melobyte-creator/App.tsx#L376) and the CryptoJS library to encrypt files
+### Security
+- A [storage crate](https://github.com/jjjutla/Melobyte/blob/main/storage/src/lib.rs) that allows more convenient api for the Soroban storage access.
+- Secure storage using [Web3Storage](https://github.com/jjjutla/Melobyte/blob/0497f4a307156ec94b91a2f8afb9f894df4b9a81/melobyte-creator/App.tsx#L376) and the [CryptoJS](https://www.npmjs.com/package/crypto-js) library to encrypt uploaded files.
 
-## - [Typescript]: Components and Hooks
+### [Typescript]: Components and Hooks
 - These are the functions and components that make the functionality of the UI work:
   	-  A [recursive binary tree](https://github.com/jjjutla/Melobyte/blob/c6901bd17ca1d7e9d8fdb75dd0e66016e2352d79/melobyte-creator/utils/binaryTreeGenerator.ts) that is used to organise the stems into their individual beats to protect the most atomic part of the song.
-  	-  [Wavesurfer.js](https://github.com/jjjutla/Melobyte/blob/c6901bd17ca1d7e9d8fdb75dd0e66016e2352d79/melobyte-creator/components/WaveForm/index.jsx): Used to display the waveform and the uique trackfingerprintID
- ## - Payments
- - Soroban ....
- - token royalities
+  	-  [Wavesurfer.js](https://github.com/jjjutla/Melobyte/blob/c6901bd17ca1d7e9d8fdb75dd0e66016e2352d79/melobyte-creator/components/WaveForm/index.jsx): Used to display the waveform and the unique track fingerprintID
 
-# Demo
+ ### Payments
+ - Soroban used to streamline the payment system and connect to the Stellar blockchain. Useful for scalability and ensuring instant and transparent transactions for artists and stakeholders.
+ - Through the ERC721 token integration, artists can now benefit from automated token royalties.
+
+## Demo
 
 The video demo is: https://www.youtube.com/watch?v=XwlzefPgSOw 
 
@@ -127,13 +129,6 @@ export REACT_APP_WEB3_STORAGE=[TOKEN]
 
 ## Uploading the stem files, which act as the proof of creation:
 <img width="1440" alt="Screenshot 2023-09-17 at 16 00 45" src="https://github.com/jjjutla/Melobyte/assets/22000925/da8a4a46-e648-431f-899a-47ee7db050e4">
-
-## Whats next for Melobyte?
-The journey of Melobyte is just starting. My primary focus would be to improve the UI and continue testing and auditing the contracts. Then the platform will be suitable to deploy live and onboard artists and fans. New token standard for music?/ ERC-3643N
-
-## Limitations
-Being a solo fullstack developer with a limited timeframe to complete this project there were several limitations and restrictions I had to put on the scope of this project. The most noticeable probelem was the latest version of freighter caused trouble with reading the XDR. Furthermore...
-
 
 
 # MIT license 
