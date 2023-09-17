@@ -32,6 +32,9 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 - These are the functions and components that make the functionality of the UI work:
   	-  A recursive binary tree that is used to organise the stems into their individual beats to protect the most atomic part of the song.
   	-  Wavesurfer.js: Used to display the waveform and the uique trackfingerprintID
+ ## - Payments
+ - Soroban ....
+ - token royalities
 
 # Demo
 
