@@ -17,10 +17,9 @@ https://arxiv.org/abs/1911.08278
 
 Once the creator selects to mint their track a freighter popup appears asking the user to approve the transaction, which will invoke the host function to mint and ask to transfer 256 XLM from their account. Once the transaction has been approved and signed using freighter wallet the artist is redirected to the creator uploader page. Here they input the metadata of the track, upload the full track and the album cover. They will also have the option to encrypt the upload to IPFS.
 
-The track waveform will then be loaded and the creator annotes the track to identify sections such as Intro, Verse, Chorus etc so spesific parts of the composition can be identified within the dataset. They can also view the audio fingerprint. The artist then uploads the multi-channel audio files of their song as a proof of creation to instantiate the creation medatata to a base layer that refers to the encrypted upload of the multip channel audio files on IPFS. The self referencing binary tree is split into the stems so at the atomic level a single beat, syllable, note ot bass is a piece of intellectual property worth of protection.
+The track waveform will then be loaded and the creator annotates the track to identify sections such as Intro, Verse, Chorus etc so specific parts of the composition can be identified within the dataset. They can also view the audio fingerprint. The artist then uploads the multi-channel audio files of their song as a proof of creation to instantiate the creation medatata to a base layer that refers to the encrypted upload of the multip channel audio files on IPFS. The self-referencing binary tree is split into the stems so at the atomic level a single beat, syllable, note ot bass is a piece of intellectual property worth of protection.
 
-Once the metadata is instantiated to the base later and the multichanne audio files are uploaded to IPFS fans and other artists can access these assets in the marketplace. An ERC721 marketplace contract is deployed to  performs trust-less validation and execution of NFT trades and these tokens can be sold.
-
+Once the metadata is instantiated to the base later and the multichannel audio files are uploaded to IPFS fans and other artists can access these assets in the marketplace. An ERC721 marketplace contract is deployed to performs trust-less validation and execution of NFT trades and these tokens can be sold.
 
 
 ## - [Rust] Smart Contracts:
