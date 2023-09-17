@@ -11,6 +11,8 @@ Melobyte was inspired by the story of drummer Gregory Coleman, whose famous 4-ba
 
 Melobyte aims to solve these problems by using blockchain technology. This ensures artists have clear proof of their work, standardizes song information, and introduces a token system, allowing fans and artists to interact while ensuring fair compensation.
 
+https://arxiv.org/abs/1911.08278
+
 # Workflow
 ## - [Rust] Smart Contracts:
 - An implementation of [ERC721](https://docs.openzeppelin.com/contracts/2.x/api/token/erc721) token demonstrating how to convert and ethereum standard to Soroban. 
