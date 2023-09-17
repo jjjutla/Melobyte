@@ -21,6 +21,25 @@ Melobyte addresses theses challenges using the immutable timestamp of blockchain
 - A recursive binary tree that is used to organise the stems into their individual beats to protect the most atomic part of the song.
 - Secure storage using Web3Storage and the CryptoJS library to encrypt files
 
+## Demo
+
+The video demo is: 
+
+
+To launch on standaline 
+
+1. Build the contracts
+
+2. Run the standalone.sh script
+
+3. Deploy the Contract
+
+''' 
+soroban config network add standalone \
+    --rpc-url http://localhost:8000/soroban/rpc \
+    --network-passphrase "Standalone Network ; February 2017"
+''' 
+
 
 ## Images
 <img width="1440" alt="Screenshot 2023-09-17 at 15 51 48" src="https://github.com/jjjutla/Melobyte/assets/22000925/4254393d-f8ce-4186-8f65-ee5f18b319ad">
