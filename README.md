@@ -48,7 +48,7 @@ Once the metadata is instantiated to the base later and the multichannel audio f
 
 # Demo
 
-The video demo is: 
+The video demo is: https://www.youtube.com/watch?v=XwlzefPgSOw 
 
 
 ## To launch on standalone 
