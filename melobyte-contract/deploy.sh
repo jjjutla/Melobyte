@@ -8,5 +8,4 @@ soroban contract invoke --id $CONTRACT_ID --source admin --network standalone --
 	--asset $(soroban lab token id --asset native --network standalone) \
 	--price 2560000000
 soroban contract invoke --id $CONTRACT_ID --source admin --network standalone -- upgrade --wasm_hash $WASM_HASH
-
 soroban contract invoke --id $CONTRACT_ID --source admin --network standalone -- -h
