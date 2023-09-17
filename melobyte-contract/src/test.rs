@@ -1,43 +1,32 @@
 #[cfg(test)]
 extern crate std;
-
 use std::println;
-
 use super::*;
-
 use soroban_sdk::{testutils::Address as _, Address, Env};
 #[test]
 fn init() {
     let env = Env::default();
     let contract_id = env.register_contract(None, melobyte);
     let client = melobyteClient::new(&env, &contract_id);
-
     let asset_admin = Address::random(&env);
     let native_addr = env.register_stellar_asset_contract(asset_admin);
-
     let admin = Address::random(&env);
     client.initialize(&admin, &native_addr, &100);
-
     assert_eq!(client.name(), String::from_slice(&env, "Pixel"));
     assert_eq!(client.symbol(), String::from_slice(&env, "PIX"));
 }
-
 #[test]
 fn mint() {
     let env = Env::default();
     let contract_id = env.register_contract(None, melobyte);
     let client = melobyteClient::new(&env, &contract_id);
-
     let asset_admin = Address::random(&env);
     let native_addr = env.register_stellar_asset_contract(asset_admin.clone());
     let asset_client_admin = token::AdminClient::new(&env, &native_addr);
-
     let admin = Address::random(&env);
     client.initialize(&admin, &native_addr, &2_560_000_000);
-
     assert_eq!(client.name(), String::from_slice(&env, "Pixel"));
     assert_eq!(client.symbol(), String::from_slice(&env, "PIX"));
-
     let user1 = Address::random(&env);
     asset_client_admin
         .mock_all_auths()
@@ -47,16 +36,13 @@ fn mint() {
     for a in auths.into_iter() {
         std::println!("{:?}", a.1);
     }
-
     let user2 = Address::random(&env);
     asset_client_admin
         .mock_all_auths()
         .mint(&user2, &2_560_000_000);
     let _ = client.mock_all_auths().try_mint(&0, &0, &user2);
-
     assert_eq!(client.balance_of(&user1), 1);
     assert_eq!(client.balance_of(&user2), 1);
-
     let turi = client.token_uri(&0);
     let mut uri = [0u8; 67];
     let (sl, _) = uri.split_at_mut(turi.len() as usize);
@@ -71,14 +57,11 @@ fn mint_all() {
     let env = Env::default();
     let contract_id = env.register_contract(None, melobyte);
     let client = melobyteClient::new(&env, &contract_id);
-
     let asset_admin = Address::random(&env);
     let native_addr = env.register_stellar_asset_contract(asset_admin.clone());
     let asset_client_admin = token::AdminClient::new(&env, &native_addr);
-
     let admin = Address::random(&env);
     client.initialize(&admin, &native_addr, &2_560_000_000);
-
     env.budget().reset_unlimited();
     for i in 0..max {
         let user1 = Address::random(&env);
@@ -96,19 +79,15 @@ fn mint_all() {
             }
         }
     }
-
     assert_eq!(client.total_supply(), max);
     let user1 = Address::random(&env);
     asset_client_admin
         .mock_all_auths()
         .mint(&user1, &2_560_000_000);
     let result = client.mock_all_auths().try_mint(&0, &0, &user1);
-
     match result {
         Err(Err(_)) => {
-            // Ok
         }
         _ => panic!("Expect an error"),
     }
-
 }
