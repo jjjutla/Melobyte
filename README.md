@@ -15,7 +15,7 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 ## - [Rust] Smart Contracts:
 - An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban. https://docs.openzeppelin.com/contracts/2.x/api/token/erc721
 - A contract that uses the converted ERC721 implementation.
-- A marketplace contract that performs trust-less validation and execution of NFT trades.
+- A [marketplace](https://github.com/jjjutla/Melobyte/blob/main/mlh-marketplace/src/lib.rs) contract that performs trust-less validation and execution of NFT trades.
 
 ## - [Bash] Deployment and Initialization Scripts:
 - A collection of Bash scripts that fascilitate th deployment and initialization of the smart contract and deployments if the local standalone network
