@@ -28,17 +28,56 @@ The video demo is:
 
 To launch on standaline 
 
-1. Build the contracts
+## 1. Build the contracts
 
-2. Run the standalone.sh script
+## 2. Run the standalone.sh script
 
-3. Deploy the Contract
+## 3. Deploy the Contract:
 
 ```
 soroban config network add standalone \
     --rpc-url http://localhost:8000/soroban/rpc \
     --network-passphrase "Standalone Network ; February 2017"
 ```
+## 4. Create and fund an admin account:
+
+```
+soroban config identity generate admin
+curl "http://localhost:8000/friendbot?addr=$(soroban config identity address admin)"
+```
+## 5. Deploy the init contract:
+
+```
+soroban contract deploy --wasm ./target/melobyte-init.wasm \
+    --source admin 
+    --network standalone
+```
+## 6. Invoke the initialize function with the contractID:
+
+``
+soroban contract invoke --id $CONTRACT_ID --source admin \
+    --network standalone \
+    -- initialize \
+	--admin admin \
+	--asset $(soroban lab token id --asset native --network standalone) \
+	--price 2560000000
+ ``
+
+## 7. Install the contract
+
+## 8. Upgrade the contract with the WASM hash
+
+## 9. Generate contract bindings
+
+```
+soroban contract bindings typescript \
+    --wasm ./target/melobyte-prod.wasm \
+	--network standalone \
+	--contract-id [CONTRACT_ID] \
+	--contract-name Million \
+	--output-dir node_modules/Melobyte
+```
+
 
 
 ## Images
