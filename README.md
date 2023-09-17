@@ -77,7 +77,11 @@ soroban contract bindings typescript \
 	--contract-name Million \
 	--output-dir node_modules/Melobyte
 ```
+### 10. Export Web3Storage token and run:
 
+```
+export REACT_APP_WEB3_STORAGE="your web3.storage token"
+```
 
 
 # Images
