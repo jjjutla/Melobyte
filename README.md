@@ -5,11 +5,11 @@ Melobyte is a decentralized platform on the Stellar blockchain powered by Soroba
 
 <img width="1440" alt="Screenshot 2023-09-17 at 15 58 40" src="https://github.com/jjjutla/Melobyte/assets/22000925/fec1f663-78f3-4093-82a2-bcca0af8aa54">
 
-Inspired by the story of Gregory Coleman a drummer whos iconic 4-bar solo was sampled thousands of times and influenced the future generation of music, but was sadly never compnesated for this contribution and died homeless, Melobyte emerges to redefine how artists are compensated in the digital age.
+## Project Goal
 
-Todays music industry is full of challenges: artists are underpaid by mainstream streaming platforms; emerging talents often fall prey to intellectual theft; inconsistent metadata obstructs rightful attribution; royalties remain obscure, and the nuanced details within songs, like a single beat or note, go unprotected. Meanwhile, fans are seeking for deeper engagement with ther music.
+Melobyte was inspired by the story of drummer Gregory Coleman, whose famous 4-bar solo was widely sampled but never paid for, leading him to die homeless. Today, many artists face issues like underpayment from streaming platforms, intellectual theft, incorrect song credits, and unclear royalties. Some unique details in songs, such as a single beat, are left unprotected. Fans also desire a deeper connection to their music.
 
-Melobyte addresses theses challenges using the immutable timestamp of blockchain technology and rovides artists with indisputable proof of creation, standardizes music metadata, and allows artists and fans to fairly interact with the music using royalty bearing tokens.
+Melobyte aims to solve these problems by using blockchain technology. This ensures artists have clear proof of their work, standardizes song information, and introduces a token system, allowing fans and artists to interact while ensuring fair compensation.
 
 
 # Features Summary
@@ -102,6 +102,10 @@ export REACT_APP_WEB3_STORAGE=[TOKEN]
 
 ## Uploading the stem files, which act as the proof of creation:
 <img width="1440" alt="Screenshot 2023-09-17 at 16 00 45" src="https://github.com/jjjutla/Melobyte/assets/22000925/da8a4a46-e648-431f-899a-47ee7db050e4">
+
+## Whats next for Melobyte?
+The journey of Melobyte is just starting. My primary focus would be to improve the UI and continue testing and auditing the contracts. Then the platform will be suitable to deploy live and onboard artists and fans. 
+
 
 
 # MIT license 
