@@ -122,7 +122,7 @@ export REACT_APP_WEB3_STORAGE=[TOKEN]
 ## The track waveform and the unique fingerprint ID:
 <img width="1440" alt="Screenshot 2023-09-17 at 16 00 12" src="https://github.com/jjjutla/Melobyte/assets/22000925/64b938e6-1e2f-44d2-94f1-ad64d70d13a4">
 
-## The track eaveform with the first 15 seconds selected as the introduction to be minted:
+## The track waveform with the first 15 seconds selected as the introduction to be minted:
 <img width="1440" alt="Screenshot 2023-09-17 at 16 00 35" src="https://github.com/jjjutla/Melobyte/assets/22000925/789a9ee5-5f1e-4ec9-a136-7ba75b54ec40">
 
 ## Uploading the stem files, which act as the proof of creation:
