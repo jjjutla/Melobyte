@@ -16,3 +16,4 @@ Decentralising Music Assets using Soroban
 
 
 ## Images
+<img width="1440" alt="Screenshot 2023-09-17 at 15 51 48" src="https://github.com/jjjutla/Melobyte/assets/22000925/4254393d-f8ce-4186-8f65-ee5f18b319ad">
