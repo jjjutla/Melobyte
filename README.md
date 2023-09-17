@@ -12,7 +12,7 @@ Todays music industry is full of challenges: artists are underpaid by mainstream
 Melobyte addresses theses challenges using the immutable timestamp of blockchain technology and rovides artists with indisputable proof of creation, standardizes music metadata, and allows artists and fans to fairly interact with the music using royalty bearing tokens.
 
 
-## Features Summary
+# Features Summary
 - An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban.
 - A contract that uses the converted ERC721 implementation.
 - A marketplace contract that performs trust-less validation and execution of NFT trades.
@@ -21,12 +21,12 @@ Melobyte addresses theses challenges using the immutable timestamp of blockchain
 - A recursive binary tree that is used to organise the stems into their individual beats to protect the most atomic part of the song.
 - Secure storage using Web3Storage and the CryptoJS library to encrypt files
 
-## Demo
+# Demo
 
 The video demo is: 
 
 
-To launch on standaline 
+## To launch on standalone 
 
 ### 1. Build the contracts
 
