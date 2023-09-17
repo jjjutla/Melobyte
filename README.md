@@ -80,7 +80,7 @@ soroban contract bindings typescript \
 ### 10. Export Web3Storage token and run:
 
 ```
-export REACT_APP_WEB3_STORAGE="[TOKEN]"
+export REACT_APP_WEB3_STORAGE=[TOKEN]
 ```
 
 
