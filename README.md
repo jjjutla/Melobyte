@@ -1,7 +1,8 @@
 # Melobyte
 Decentralising Music Assets using Soroban
-![Uploading Screenshot 2023-09-17 at 15.58.40.png…]()
 
+
+<img width="1440" alt="Screenshot 2023-09-17 at 15 58 40" src="https://github.com/jjjutla/Melobyte/assets/22000925/fec1f663-78f3-4093-82a2-bcca0af8aa54">
 
 
 ## Features Summary
