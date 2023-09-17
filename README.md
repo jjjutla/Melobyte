@@ -34,11 +34,11 @@ To launch on standaline
 
 3. Deploy the Contract
 
-''' 
+`
 soroban config network add standalone \
     --rpc-url http://localhost:8000/soroban/rpc \
     --network-passphrase "Standalone Network ; February 2017"
-''' 
+`
 
 
 ## Images
