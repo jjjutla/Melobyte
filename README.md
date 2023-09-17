@@ -1,7 +1,19 @@
 # Melobyte
 ## Decentralising Music Assets using Soroban
 
-Melobyte is a decentralized platform on the Stellar blockchain powered by Soroban that focuses on safeguarding and monetizing music intellectual property. By allowing artists to upload and mint parts of their songs as royalty-bearing tokens, it ensures their creations are protected while offering fans a unique opportunity to invest directly in these musical assets. The integration with Soroban ensures fast, secure, and transparent transactions, providing an efficient solution to the challenges traditionally faced by music creators in an evolving digital landscape."
+Melobyte is a decentralized platform on the Stellar blockchain powered by Soroban that focuses on safeguarding and monetizing music intellectual property. By allowing artists to upload and mint parts of their songs as royalty-bearing tokens, it ensures their creations are protected while offering fans a unique opportunity to invest directly in these musical assets. The integration with Soroban ensures fast, secure, and transparent transactions, providing an efficient solution to the challenges traditionally faced by music creators in an evolving digital landscape.
+
+
+Inspired by the story of Gregory Coleman a drummer whos iconic 4-bar solo was sampled thousands of times and influenced the future generation of music, but was sadly never compnesated for this contribution and died homeless, Melobyte emerges to redefine how artists are compensated in the digital age.
+
+Todays music industry is full of challenges: artists are underpaid by mainstream streaming platforms; emerging talents often fall prey to intellectual theft; inconsistent metadata obstructs rightful attribution; royalties remain obscure, and the nuanced details within songs, like a single beat or note, go unprotected. Meanwhile, fans are seeking for deeper engagement with ther music.
+
+Melobyte addresses theses challenges using the immutable timestamp of blockchain technology and rovides artists with indisputable proof of creation, standardizes music metadata, and allows artists and fans to fairly interact with the music using royalty bearing tokens.
+
+
+
+
+
 
 
 <img width="1440" alt="Screenshot 2023-09-17 at 15 58 40" src="https://github.com/jjjutla/Melobyte/assets/22000925/fec1f663-78f3-4093-82a2-bcca0af8aa54">
