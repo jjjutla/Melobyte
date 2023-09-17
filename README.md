@@ -17,16 +17,21 @@ Melobyte aims to solve these problems by using blockchain technology. This ensur
 - A contract that uses the converted ERC721 implementation.
 - A marketplace contract that performs trust-less validation and execution of NFT trades.
 
+## - [Bash] Deployment and Initialization Scripts:
+- A collection of Bash scripts that fascilitate th deployment and initialization of the smart contract and deployments if the local standalone network
 
+## - [Astro] Font end implementation:
+- Developed using Astro, mainly as it was a new learning experiance working with this framework and is more flexible, which allowed me to build UI with any popular component library.
+- Exposes the smart contract functions letting you mint, buy and transfer the tokens.
 
-# Features Summary
-- An implementation of ERC721 token demonstrating how to convert and ethereum standard to Soroban.
-- A contract that uses the converted ERC721 implementation.
-- A marketplace contract that performs trust-less validation and execution of NFT trades.
-- A Dapp written in Astro that exposes the contract functions letting you mint, buy and transfer the tokens.
-- A Soroban storage crate that allows easy access to the soroban storage crate
-- A recursive binary tree that is used to organise the stems into their individual beats to protect the most atomic part of the song.
+## - Security
+- a storage crate that allows more convenient api for the soroban storage access
 - Secure storage using Web3Storage and the CryptoJS library to encrypt files
+
+## - [Typescript]: Components and Hooks
+- These are the functions and components that make the functionality of the UI work:
+  	-  A recursive binary tree that is used to organise the stems into their individual beats to protect the most atomic part of the song.
+  	-  Wavesurfer.js: Used to display the waveform and the fingerprint ID
 
 # Demo
 
