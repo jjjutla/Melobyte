@@ -1,5 +1,4 @@
 #![no_std]
-
 use soroban_sdk::{
     contract, contractimpl, contracttype, symbol_short, token, Address, Env, Map, Symbol,
 };
@@ -26,7 +25,6 @@ mod stub {
             _expiration_ledger: u32,
         ) {
         }
-
         pub fn balance_of(_env: Env, _owner: Address) -> u32 {
             0
         }
@@ -38,7 +36,6 @@ pub struct Nft {
     contract_id: Address,
     token_id: u32,
 }
-
 #[contracttype]
 pub struct Price {
     amount: i128,
@@ -48,16 +45,11 @@ pub struct Price {
 pub struct OrderBook {
     nfts: Map<Nft, Address>,
 }
-
 pub const CONTRACT: Symbol = symbol_short!("CONTRACT");
 pub const ORDER_BOOK: Symbol = symbol_short!("BOOK");
 
 #[contract]
 pub struct MarketPlace;
-
-///
-/// An ERC721 marketplace, sellers must own an NFT from the CONTRACT
-///
 #[contractimpl]
 impl MarketPlace {
     pub fn initialize(env: Env, contract: Address) {
@@ -104,7 +96,6 @@ impl MarketPlace {
         env.storage()
             .temporary()
             .bump(&ORDER_BOOK, expiration_ledger - env.ledger().sequence());
-
         env.storage().temporary().set(&nft, &price);
         env.storage()
             .temporary()
@@ -112,7 +103,6 @@ impl MarketPlace {
     }
     pub fn buy(env: Env, buyer: Address, nft: Nft) {
         buyer.require_auth();
-
         if let Some(Price { amount, asset }) = env.storage().temporary().get(&nft) {
             let mut order_book = env
                 .storage()
@@ -141,7 +131,6 @@ impl MarketPlace {
         }
     }
 }
-
 #[cfg(test)]
 mod tests {
     use soroban_sdk::{xdr::Asset, Address, BytesN, Env};
