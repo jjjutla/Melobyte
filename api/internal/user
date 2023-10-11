@@ -1,0 +1,34 @@
+import jwt
+from sqlalchemy import create_engine, Column, Integer, String, Boolean, ForeignKey, UniqueConstraint
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
+
+Base = declarative_base()
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    username = Column(String, unique=True, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    pfp_url = Column(String)
+    project_id = Column(Integer, ForeignKey('projects.id'))
+    project = relationship("Project")
+    is_first_time = Column(Boolean, default=True)
+
+    def get_signed_jwt(self):
+        claims = {
+            "username": self.username,
+            "uid": self.id,
+            "pid": self.project_id,
+        }
+        encoded_jwt = jwt.encode(claims, 'YOUR_SECRET_KEY', algorithm='HS256')
+        return encoded_jwt
+
+class Project(Base):
+    __tablename__ = 'projects'
+
+    id = Column(Integer, primary_key=True)
+
+
