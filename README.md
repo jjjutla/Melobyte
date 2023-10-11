@@ -45,12 +45,13 @@ Once the metadata is instantiated to the base later and the multichannel audio f
   	-  [Wavesurfer.js](https://github.com/jjjutla/Melobyte/blob/c6901bd17ca1d7e9d8fdb75dd0e66016e2352d79/melobyte-creator/components/WaveForm/index.jsx): Used to display the waveform and the unique track fingerprintID
 
  ### Payments
+ - Walletless Login: To allow for a familiar Google or Spotify Lgin to fasciliate the generation of ID and keys to make a streamlined process
  - Soroban - used to streamline the payment system and connect to the Stellar blockchain. Useful for scalability and ensuring instant and transparent transactions for artists and stakeholders.
  - Through the ERC721 token integration, artists can now benefit from automated token royalties.
 
 ## Demo
 
-The video demo is: https://www.youtube.com/watch?v=XwlzefPgSOw 
+The video demo is: [https://www.youtube.com/watch?v=XwlzefPgSOw ](https://www.youtube.com/watch?v=-IA3In64khE)
 
 
 ## To launch on standalone 
